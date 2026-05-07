@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karen & Pablo - Nuestra Boda</title>
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="overlay">
+      <p>NUESTRA BODA</p>
+      <h1>Karen & Pablo</h1>
+      <div id="wedding" data-datetime="2026-12-19T17:00:00" style="display:none"></div>
+    </div>
+  </section>
+
+  <!-- INVITATION -->
+  <section class="invitation">
+    <p>Tenemos el honor de invitarles a celebrar nuestro enlace matrimonial con la bendición de Dios y nuestros padres:</p>
+    <div class="parents">
+      <p><span class="parent-name" id="karen-father">Alfonso Cruz Huerta</span><br> <span class="parent-name" id="karen-mother">Sonia Varela Martínez</span></p>
+      <h2>&</h2>
+      <p><span class="parent-name" id="pablo-father">Manuel Borja Gallegos</span><br> <span class="parent-name" id="pablo-mother">Maria Guadalupe Chávez Solano</span></p>
+    </div>
+  </section>
+
+  <!-- GODPARENTS -->
+  <section class="godparents">
+    <h2>Nuestros Padrinos</h2>
+    <div class="godparents-list">
+      <div class="godparent-item">
+        <img src="https://via.placeholder.com/100?text=Velaci%C3%B3n" alt="Icono velación" class="godparent-icon" />
+        <h3>Velación</h3>
+        <p><span class="godparent-name">Rafael Sánchez</span><br><span class="godparent-name">Juana Huerta</span></p>
+      </div>
+      <div class="godparent-item">
+        <img src="https://via.placeholder.com/100?text=Lazo" alt="Icono lazo" class="godparent-icon" />
+        <h3>Lazo</h3>
+        <p><span class="godparent-name">Juan Manuel Monroy Andrade</span><br><span class="godparent-name">Maria Eugenia Vallarta</span></p>
+      </div>
+      <div class="godparent-item">
+        <img src="https://via.placeholder.com/100?text=Anillos" alt="Icono anillos" class="godparent-icon" />
+        <h3>Anillos</h3>
+        <p><span class="godparent-name">Manuel Borja Gallegos</span><br><span class="godparent-name">Maria Guadalupe Chávez Solano</span></p>
+      </div>
+      <div class="godparent-item">
+        <img src="https://via.placeholder.com/100?text=Arras" alt="Icono arras" class="godparent-icon" />
+        <h3>Arras</h3>
+        <p><span class="godparent-name">Arturo Calva</span><br><span class="godparent-name">Marcela Borja</span></p>
+      </div>
+      <div class="godparent-item">
+        <img src="https://via.placeholder.com/100?text=Biblia" alt="Icono biblia" class="godparent-icon" />
+        <h3>Biblia y Rosario</h3>
+        <p><span class="godparent-name">Gabriel Huerta</span><br><span class="godparent-name">Esposa de Gabriel Huerta</span></p>
+      </div>
+      <div class="godparent-item">
+        <img src="https://via.placeholder.com/100?text=Medallas" alt="Icono medallas" class="godparent-icon" />
+        <h3>Medallas</h3>
+        <p><span class="godparent-name">Hector Gonzalez</span><br><span class="godparent-name">Lizbeth Solano</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COUNTDOWN -->
+  <section class="countdown">
+  <h2>Cuenta regresiva</h2>
+  <p class="countdown-subtitle">Cada día nos acerca más a este momento especial</p>
+
+  <div class="countdown-grid">
+    <div class="time-box">
+      <span id="days">00</span>
+      <small>Días</small>
+    </div>
+    <div class="time-box">
+      <span id="hours">00</span>
+      <small>Horas</small>
+    </div>
+    <div class="time-box">
+      <span id="minutes">00</span>
+      <small>Minutos</small>
+    </div>
+    <div class="time-box">
+      <span id="seconds">00</span>
+      <small>Segundos</small>
+    </div>
+  </div>
+</section>
+
+  <!-- NUESTRA HISTORIA -->
+  <section class="story">
+    <h2>Nuestra Historia</h2>
+  </section>
+
+  <!-- DETALLES -->
+  <section class="details">
+    <h2>Detalles del Evento</h2>
+    <div class="event church">
+      <h3>Iglesia</h3>
+      <p><strong>Horario:</strong> 5:00 PM</p>
+      <p><strong>Nombre:</strong> Parroquia de Nuestra Señora de Guadalupe</p>
+      <p><strong>Dirección:</strong> Tenochtitlan Manzana 001, Rincón de Los Reyes, Ancon de los Reyes, 56410 Los Reyes Acaquilpan, Méx.</p>
+      <button class="btn-secondary" onclick="window.open('https://maps.app.goo.gl/9A6qzS1iuqMg8PFm7','_blank')">Ver en Google Maps</button>
+    </div>
+    <div class="event venue">
+      <h3>Salón</h3>
+      <p><strong>Horario:</strong> 8:00 PM</p>
+      <p><strong>Nombre:</strong> Salon Jardin La Paz</p>
+      <p><strong>Dirección:</strong> C. del Pozo 2-4, Magdalena de los Reyes, 56440 Los Reyes Acaquilpan, Méx.</p>
+      <button class="btn-secondary" onclick="window.open('https://maps.app.goo.gl/WKcpz9dX8BUmweYC9','_blank')">Ver en Google Maps</button>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section class="rsvp">
+    <h2>Confirma tu asistencia</h2>
+    <form>
+      <fieldset class="radio-group">
+        <legend>¿Asistirás?</legend>
+        <label class="radio-label">
+          <input type="radio" name="asistencia" value="asistiré" checked />
+          Asistiré
+        </label>
+        <label class="radio-label">
+          <input type="radio" name="asistencia" value="no-asistiré" />
+          No podré asistir
+        </label>
+      </fieldset>
+      <div id="companions-container">
+        <p id="companions-message"></p>
+        <div id="companions-inputs"></div>
+        <div id="companions-controls" style="display: none;">
+          <p id="companions-counter">Acompañantes restantes: <span id="remaining-count">0</span></p>
+          <button type="button" id="add-companion-btn" class="btn-secondary">Agregar acompañante</button>
+        </div>
+      </div>
+      <button type="submit" class="btn-primary">Enviar</button>
+    </form>
+  </section>
+
+  <!-- Confirmation Modal -->
+  <div id="confirmation-modal" class="modal hidden">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <h2>Confirmar asistencia</h2>
+      <p id="modal-message"></p>
+      <div class="modal-buttons">
+        <button type="button" id="modal-cancel-btn" class="btn-secondary">Agregar más</button>
+        <button type="button" id="modal-confirm-btn" class="btn-primary">Continuar sin agregar</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Con amor, Karen & Pablo 💍</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
