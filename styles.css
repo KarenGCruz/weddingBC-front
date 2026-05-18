@@ -3,8 +3,8 @@
   --bg-soft: #fdfbf8;
   --text: #223046;
   --text-light: #5f6b7a;
-  --accent: #c9a15d;
-  --accent-dark: #b38a49;
+  --accent: #ac0000;
+  --accent: #ac0000;
   --white: #ffffff;
   --shadow: 0 8px 24px rgba(34, 48, 70, 0.08);
   --shadow-hover: 0 14px 32px rgba(34, 48, 70, 0.14);
@@ -419,7 +419,7 @@ legend{font-size:14px;font-weight:600;margin-bottom:10px;color:var(--text)}
   display: block;
   font-family: 'Playfair Display', serif;
   font-size: clamp(2.2rem, 5vw, 3.2rem);
-  color: #c9a15d;
+  color: var(--accent);
   line-height: 1;
   margin-bottom: 10px;
 }
