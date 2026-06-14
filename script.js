@@ -65,49 +65,7 @@ function createCompanionInput() {
   }
 }
 
-function addCompanionInput() {
-  if (currentCompanions >= numCompanions) return;
 
-  currentCompanions++;
-  const companionDiv = document.createElement('div');
-  companionDiv.className = 'companion-item';
-
-  const input = document.createElement('input');
-  input.type = 'text';
-  input.placeholder = `Nombre de acompañante${currentCompanions}`;
-  input.className = 'companion-input';
-
-  input.addEventListener('input', (e) => {
-    let value = e.target.value;
-    //pura letra
-    value = value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g, '');
-
-    const spaces = (value.match(/\s/g) || []).length;
-    //max 3 espacios, normalmente 4 nombres y apellido
-    if (spaces > 3) {
-      value = value.replace(/\s/g, (match, offset, string) => {
-        const spacesBefore = (string.substring(0, offset).match(/\s/g) || []).length;
-        return spacesBefore < 4 ? match : '';
-      });
-    }
-    e.target.value = value;
-  });
-
-  companionDiv.appendChild(input);
-  companionsInputs.appendChild(companionDiv);
-}
-
-function saveCompanions() {
-  savedCompanionValues = [];
-  const inputs = companionsInputs.querySelectorAll('.companion-input');
-  inputs.forEach(input => {
-    savedCompanionValues.push(input.value);
-  });
-}
-
-
-
-addCompanionBtn.addEventListener('click', addCompanionInput);
 
 const radioButtons = document.querySelectorAll('input[name="asistencia"]');
 
