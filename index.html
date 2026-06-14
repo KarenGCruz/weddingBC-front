@@ -121,24 +121,26 @@
     <h2>Confirma tu asistencia</h2>
     <form>
       <fieldset class="radio-group">
-        <legend>¿Asistirás?</legend>
+        <legend>¿Contamos contigo?</legend>
         <label class="radio-label">
           <input type="radio" name="asistencia" value="asistiré" checked />
-          Asistiré
+          ¡Claro que sí! ❤️
         </label>
         <label class="radio-label">
           <input type="radio" name="asistencia" value="no-asistiré" />
-          No podré asistir
+          Lo siento, no podré asistir 💔
         </label>
       </fieldset>
       <div id="companions-container">
-        <p id="companions-message"></p>
-        <div id="companions-inputs"></div>
+        <p id="companions-message"> Hemos considerado 4 integrantes de tu familia, favor de registrarlos.</p>
+        <div id="companions-inputs">
+        </div>
         <div id="companions-controls" style="display: none;">
-          <p id="companions-counter">Acompañantes restantes: <span id="remaining-count">0</span></p>
           <button type="button" id="add-companion-btn" class="btn-secondary">Agregar acompañante</button>
         </div>
       </div>
+      <p> Por favor, confirma tu asistencia antes del 30 de noviembre para que podamos tener todo listo para ti.</p>
+<br/>
       <button type="submit" class="btn-primary">Enviar</button>
     </form>
   </section>
@@ -154,6 +156,7 @@
         <button type="button" id="modal-confirm-btn" class="btn-primary">Continuar sin agregar</button>
       </div>
     </div>
+
   </div>
 
   <footer>

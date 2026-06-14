@@ -41,6 +41,7 @@ const companionsControls = document.getElementById('companions-controls');
 const remainingCount = document.getElementById('remaining-count');
 const addCompanionBtn = document.getElementById('add-companion-btn');
 
+
 let currentCompanions = 0;
 let savedCompanionValues = [];
 
@@ -54,12 +55,14 @@ function updateCompanionsMessage() {
   }
 }
 
-function updateCounter() {
-  // Count only filled inputs
-  const filledInputs = Array.from(companionsInputs.querySelectorAll('.companion-input')).filter(input => input.value.trim() !== '').length;
-  const remaining = numCompanions - filledInputs;
-  remainingCount.textContent = Math.max(0, remaining);
-  addCompanionBtn.style.display = remaining <= 0 ? 'none' : 'block';
+function createCompanionInput() {
+  for (let i = 0; i < numCompanions; i++) {
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.placeholder = `Nombre de acompañante${i+1}`;
+    input.className = 'companion-input';
+    companionsInputs.appendChild(input);
+  }
 }
 
 function addCompanionInput() {
@@ -71,16 +74,16 @@ function addCompanionInput() {
 
   const input = document.createElement('input');
   input.type = 'text';
-  input.placeholder = `Nombre ${currentCompanions}`;
+  input.placeholder = `Nombre de acompañante${currentCompanions}`;
   input.className = 'companion-input';
 
   input.addEventListener('input', (e) => {
     let value = e.target.value;
     //pura letra
     value = value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g, '');
-    
+
     const spaces = (value.match(/\s/g) || []).length;
-    //max 3 espacios, normalmente 4 nombres y apellido 
+    //max 3 espacios, normalmente 4 nombres y apellido
     if (spaces > 3) {
       value = value.replace(/\s/g, (match, offset, string) => {
         const spacesBefore = (string.substring(0, offset).match(/\s/g) || []).length;
@@ -88,42 +91,10 @@ function addCompanionInput() {
       });
     }
     e.target.value = value;
-    updateCounter(); // Update counter when input changes
-  });
-
-  const removeBtn = document.createElement('button');
-  removeBtn.type = 'button';
-  removeBtn.className = 'remove-companion-btn';
-  removeBtn.textContent = '×';
-  removeBtn.title = 'Eliminar acompañante';
-
-  removeBtn.addEventListener('click', () => {
-    companionDiv.remove();
-    currentCompanions--;
-    updateCounter();
-    // Renumber remaining inputs
-    const inputs = companionsInputs.querySelectorAll('.companion-input');
-    inputs.forEach((inp, index) => {
-      inp.placeholder = `Nombre ${index + 1}`;
-    });
   });
 
   companionDiv.appendChild(input);
-  companionDiv.appendChild(removeBtn);
   companionsInputs.appendChild(companionDiv);
-  updateCounter();
-}
-
-function initializeCompanions() {
-  companionsInputs.innerHTML = '';
-  currentCompanions = 0;
-
-  if (numCompanions > 0) {
-    addCompanionInput();
-  }
-
-  updateCompanionsMessage();
-  updateCounter();
 }
 
 function saveCompanions() {
@@ -134,20 +105,6 @@ function saveCompanions() {
   });
 }
 
-function restoreCompanions() {
-  companionsInputs.innerHTML = '';
-  currentCompanions = 0;
-  savedCompanionValues.forEach((value, index) => {
-    addCompanionInput();
-    const inputs = companionsInputs.querySelectorAll('.companion-input');
-    inputs[inputs.length - 1].value = value;
-  });
-  if (savedCompanionValues.length === 0 && numCompanions > 0) {
-    addCompanionInput(); 
-  }
-  updateCompanionsMessage();
-  updateCounter();
-}
 
 
 addCompanionBtn.addEventListener('click', addCompanionInput);
@@ -158,9 +115,9 @@ function updateCompanionsVisibility() {
   const selected = document.querySelector('input[name="asistencia"]:checked');
   if (selected && selected.value === 'asistiré') {
     companionsContainer.classList.remove('companions-hidden');
-    restoreCompanions(); 
+    //restoreCompanions();
   } else {
-    saveCompanions(); 
+    saveCompanions();
     companionsContainer.classList.add('companions-hidden');
   }
 }
@@ -248,3 +205,4 @@ const countdownSection = document.querySelector('.countdown');
 countdownObserver.observe(countdownSection);
 
 updateCompanionsVisibility();
+createCompanionInput();
